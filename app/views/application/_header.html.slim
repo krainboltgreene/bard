@@ -1,0 +1,12 @@
+= link_to "Bard", "/", class: "brand"
+
+ul.nav
+  li= link_to "About", "/about"
+  li= link_to "Support", "/support"
+
+= form_tag sessions_path do
+  = label_tag :email
+  = email_field_tag :email, params[:email]
+  = label_tag :password
+  = password_field_tag :password
+  = submit_tag "Sign in"

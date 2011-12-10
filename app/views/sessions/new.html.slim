@@ -1,15 +1,20 @@
 h1 Sign in
-
 = form_tag sessions_path do
-  .field
-    = label_tag :email
-    = email_field_tag :email, params[:email]
-  .field
-    = label_tag :password
-    = password_field_tag :password
-  .field
-    = check_box_tag :remember_me, 1, params[:remember_me]
-    = label_tag :remember_me
-  = link_to "Don't have an account?", signup_path
-  .actions
-    = submit_tag "Sign in"
+  fieldset
+    legend Sign in to your account, if you have one
+    .clearfix
+      = label_tag :email
+      .input
+        = email_field_tag :email, params[:email]
+    .clearfix
+      = label_tag :password
+      .input
+        = password_field_tag :password
+    .clearfix
+      = label_tag :remember_me
+      .input
+        ul.inputs-list
+          li
+            label= check_box_tag :remember_me, 1, params[:remember_me]
+    .actions
+      = submit_tag "Sign in", class: "btn primary"
