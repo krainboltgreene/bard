@@ -1,0 +1,28 @@
+h1 Sign Up
+
+= form_for @account do |form|
+  - if @account.errors.any?
+    section.error_messages
+      header
+        h1 Form is invalid
+      ul
+        - @account.errors.full_messages.each do |message|
+          li= message
+
+  .field
+    = form.label :email
+    = form.email_field :email
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :password
+    = form.password_field :password
+  .field
+    = form.label :password_confirmation
+    = form.password_field :password_confirmation
+  .field
+    = form.check_box :terms
+    = form.label :terms
+  .actions
+    = form.submit
