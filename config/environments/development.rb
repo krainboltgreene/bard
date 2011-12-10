@@ -27,4 +27,7 @@ Bard::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Force Slim to use the pretty-print option
+  Slim::Engine.set_default_options :pretty => true
 end
