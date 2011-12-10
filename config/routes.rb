@@ -7,6 +7,7 @@ Bard::Application.routes.draw do
 
   get "signin", controller: :sessions, action: :new, as: :signin
   get "signout", controller: :sessions, action: :destroy, as: :signout
+  get "signup", controller: :accounts, action: :new, as: :signup
 
   get "about", controller: :pages, action: :about, as: :about
   get "jobs", controller: :pages, action: :jobs, as: :jobs
