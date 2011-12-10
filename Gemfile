@@ -8,7 +8,7 @@ gem 'sorcery', '0.7.5'
 gem 'draper', '0.9.5'
 gem 'thin', '1.3.1'
 gem 'dalli', '1.1.3'
-
+gem 'thin', '1.3.1'
 
 group :development, :test do
   gem 'awesome_print', '1.0.1'
