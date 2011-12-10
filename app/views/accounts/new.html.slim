@@ -1,5 +1,3 @@
-h1 Sign Up
-
 = form_for @account do |form|
   = render partial: 'errors', locals: { form: form }
   fieldset
@@ -13,3 +11,4 @@ h1 Sign Up
             label= form.check_box :terms
     .actions
       = form.submit class: "btn large primary"
+
