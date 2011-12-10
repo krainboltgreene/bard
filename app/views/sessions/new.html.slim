@@ -1,15 +1,22 @@
-h1 Sign in
-
-= form_tag sessions_path do
-  .field
-    = label_tag :email
-    = email_field_tag :email, params[:email]
-  .field
-    = label_tag :password
-    = password_field_tag :password
-  .field
-    = check_box_tag :remember_me, 1, params[:remember_me]
-    = label_tag :remember_me
-  = link_to "Don't have an account?", signup_path
-  .actions
-    = submit_tag "Sign in"
+.content
+  .page-header
+    h1 Sign in
+  .row
+    .span4
+      = form_tag sessions_path do
+        .form-stacked
+          = label_tag :email
+          .clearfix.success
+            = email_field_tag :email, params[:email]
+        .form-stacked
+          = label_tag :password
+          .clearfix.success
+            = password_field_tag :password
+        .form-stacked
+          = label_tag :remember_me
+          .clearfix
+            = check_box_tag :remember_me, 1, params[:remember_me]
+        .form-stacked
+          = link_to "Don't have an account?", signup_path
+        .btn
+          = submit_tag "Sign in"
