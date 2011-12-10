@@ -9,7 +9,12 @@ gem 'draper', '0.9.5'
 gem 'thin', '1.3.1'
 gem 'dalli', '1.1.3'
 gem 'thin', '1.3.1'
-
+gem 'slim-rails', '0.2.1'
+gem 'sass-rails', '3.1.5'
+gem 'coffee-rails', '3.1.1'
+gem 'jquery-rails', '1.0.19'
+gem 'redcarpet', '2.0.0'
+ 
 group :development, :test do
   gem 'awesome_print', '1.0.1'
 end
@@ -19,10 +24,5 @@ group :development do
 end
 
 group :assets do
-  gem 'slim-rails', '0.2.1'
-  gem 'sass-rails', '3.1.5'
-  gem 'coffee-rails', '3.1.1'
-  gem 'jquery-rails', '1.0.19'
-  gem 'redcarpet', '2.0.0'
   gem 'uglifier', '1.1.0'
 end
