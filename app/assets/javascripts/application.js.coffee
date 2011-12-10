@@ -10,4 +10,11 @@
 #= require alerts
 #= require popover
 #= require twipsy
+#= require fancybox
+#= require guiders
+#= require modal
+#= require buttons
+#= require scrollspy
+#= require slides
+#= require tabs
 #= require_tree .

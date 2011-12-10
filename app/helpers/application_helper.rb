@@ -30,4 +30,12 @@ module ApplicationHelper
       KEYWORDS
     end.join(', ')
   end
+
+  def view_has_header?
+    @header
+  end
+
+  def view_has_footer?
+    @footer
+  end
 end
