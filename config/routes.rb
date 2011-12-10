@@ -1,4 +1,18 @@
 Bard::Application.routes.draw do
+  get "pages/about"
+
+  get "pages/jobs"
+
+  get "pages/beta"
+
+  get "pages/policy"
+
+  get "pages/splash"
+
+  get "pages/support"
+
+  get "pages/terms"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
