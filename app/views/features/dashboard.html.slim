@@ -7,33 +7,3 @@ section#Stories
     = render partial: 'active_stories'
   = render partial: 'stories'
   = render partial: 'backlog_stories'
-
-div.row
-  img class='pull-left' src='' alt='' style='background: #EEE; width: 200px; height: 200px; display: block;'
-  div.span11
-    h1 Elder Dragon
-    span.minor 400XP
-    meter#EpicProgress.bar min='0' max='100' value='50'
-      span.fill style='width:50%'
-      span.twipsy.above style='left:50%'
-        span.twipsy-arrow
-        span.twipsy-inner 50%
-    h2 Description
-    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum felis et nunc venenatis condimentum. Nulla et sapien magna, vel adipiscing ipsum. In rutrum, nisi ut eleifend vulputate, ligula nisi.
-h2 Stories
-ul
-  li
-    h3 Do this and that
-    meter min='0' max='100' value='50'
-      span style='width:50%'
-      strong style='left:50%' 50%
-    button.btn Stop
-    button.btn Abandon
-    button.btn Edit
-  li
-    h3 Do some other stuff
-    meter min='0' max='100' value='35'
-      span width='35%' 35%
-    button.btn Stop
-    button.btn Abandon
-    button.btn Edit
