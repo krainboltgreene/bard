@@ -1,0 +1,19 @@
+section.well
+  header
+    h1= story.details
+  ul
+    .row
+      li.span2 = link_to "New Lyric", "#"
+      li.span2 = link_to "Edit", "#"
+      li.span2 = link_to "Abandon", "#"
+      li.span2 = link_to "Start", "#"
+      li.span2 = link_to "Finish", "#"
+
+  p
+    - percent_completed = (story.lyrics.select(&:completed?).count / story.lyrics.count) * 10
+    - percent_completed = 40
+    #progress_bar.ui-progress-bar.ui-container
+      - if percent_completed >= 35
+        .ui-progress style="width: #{percent_completed}%;"
+          span.ui-label
+            #{percent_completed}% Complete

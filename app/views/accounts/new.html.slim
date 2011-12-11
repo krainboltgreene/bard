@@ -1,11 +1,12 @@
+header.page-header
+  h1 Create Your Account
 = form_for @account do |form|
   = render partial: 'errors', locals: { form: form }
   fieldset.row
-    legend
-      header
-        h1 Create Your Account
-      p Who are you in the big picture? What do you bring to the table?
-    hr
+    .clearfix
+      legend
+        - popover = { title: "Account Type", content: "This is the type of account you'll have on Bard. Click on each button to find out more." }
+        span data-title=popover[:title] data-content=popover[:content] First, select your account type
     .clearfix
       = render partial: 'type_select', locals: { form: form }
     hr

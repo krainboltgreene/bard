@@ -14,7 +14,8 @@ section#ShortPitch.row
       .clearfix
         p= link_to "Make Your Progress Count, Today!", signup_path, class: "btn large primary"
   section.span8
-    = image_tag 'mandi.jpg'
+    - popover = { title: "Mandy", content: "This is Mandy, he's the little monster that couldn't. If only he had some process to see what he was doing wrong!" }
+    = image_tag 'mandi.jpg', data: popover
 hr
 section#LongPitch.row
   section.span-one-third

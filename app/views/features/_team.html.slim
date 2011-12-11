@@ -1,0 +1,9 @@
+section.well
+  header
+    h2 Party Members
+  p
+    - storytellers = raw storytellers.map{|s| link_to s.name, account_path(s) }.join(', ')
+    em The storytellers for this epic are #{ storytellers }
+  p
+    - heroes = raw heroes.map{|s| link_to s.name, account_path(s) }.join(', ')
+    em The heroes for this epic are #{ heroes }

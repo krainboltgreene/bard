@@ -7,9 +7,11 @@ article.accounts_controller {
       text-align: center;
       p {
         display: inline-block;
+
         label {
           text-align: center;
         }
+
         input {
           position: absolute;
           left: -9999em;
@@ -19,6 +21,3 @@ article.accounts_controller {
   }
 }
 
-label[for='account_terms'] {
-  margin-left: 0;
-}

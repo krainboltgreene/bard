@@ -1,7 +1,8 @@
-ul#Stories.row
+header
+  h1 Active Stories
+ul
   - current_user.story.epic.stories.each do |story|
-    li.story.span3
-      .well
-        = link_to story.storyteller.name, account_path(story.storyteller)
-        p = story.details
-        p #{story.challenge_rating} CR
+    li
+      = link_to story.storyteller.name, account_path(story.storyteller)
+      p = story.details
+      p #{story.challenge_rating} CR

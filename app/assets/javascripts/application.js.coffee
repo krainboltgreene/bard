@@ -11,6 +11,7 @@
 #= require fancybox
 #= require guiders
 #= require isotope
+#= require progress
 #= require alerts
 #= require twipsy
 #= require popover

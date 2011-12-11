@@ -1,10 +1,11 @@
+header.page-header
+  h1 Sign In
+
 = form_tag sessions_path do
   fieldset.row
     .span8
-      legend
-        header
-          h1 Sign In
-        p Sign in to your account, if you have one
+      .clearfix
+        legend Sign in to your account
       .clearfix
         - popover = { title: "Email Field", content: "Enter the email address you used to sign up." }
         = label_tag :email
