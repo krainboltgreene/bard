@@ -1,5 +1,6 @@
 Bard::Application.routes.draw do
 
+  resources :features
   resources :sessions
   resources :accounts do
     get 'dashboard', action: :dashboard, on: :collection

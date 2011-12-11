@@ -1,0 +1,8 @@
+h1 Listing features
+
+ul
+  - @features.each do |feature|
+    li= feature.details
+br
+
+= link_to 'New Feature', new_feature_path

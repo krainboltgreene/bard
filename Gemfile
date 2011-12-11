@@ -14,8 +14,10 @@ gem 'sass-rails', '3.1.5'
 gem 'coffee-rails', '3.1.1'
 gem 'jquery-rails', '1.0.19'
 gem 'redcarpet', '2.0.0'
- 
+
 group :development, :test do
+  gem 'fabrication', '1.2.0'
+  gem 'forgery', '0.5.0'
   gem 'awesome_print', '1.0.1'
 end
 
