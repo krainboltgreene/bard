@@ -11,6 +11,7 @@ class Account
   field :encryped_password
   field :name
   field :terms, type: Boolean, default: false
+  field :xp, type: Integer, default: 0
 
   index :email, unique: true
 
@@ -24,6 +25,14 @@ class Account
   validates :terms, acceptance: { accept: true }
 
   before_create :convert_terms
+
+  def level
+
+  end
+
+  def remaining_experience
+
+  end
 
   private
     def convert_terms

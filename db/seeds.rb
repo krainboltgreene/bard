@@ -2,17 +2,16 @@ Account.delete_all
 Feature.delete_all
 
 5.times do
-  @masters = []
   master = Fabricate(:master)
-  10.times do
+  5.times do
     epic = Fabricate(:epic)
 
-    25.times do
+    10.times do
       storyteller = Fabricate(:storyteller)
       hero = Fabricate(:hero)
       story = Fabricate(:story)
 
-      10.times do
+      5.times do
         lyric = Fabricate(:lyric)
         hero.lyrics << lyric
         story.lyrics << lyric
@@ -23,6 +22,6 @@ Feature.delete_all
       storyteller.stories << story
     end
 
-    master.epic << epic
+    master.epics << epic
   end
 end
