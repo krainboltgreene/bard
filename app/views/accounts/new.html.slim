@@ -24,7 +24,7 @@
           ul.inputs-list
             li
               label
-                = form.check_box :termsx`
+                = form.check_box :terms
                 - terms = "\"I accept the Terms Of Use as listed #{link_to "here", terms_path}\""
                 = form.label :terms, raw(terms)
     #TypeDetails.span8
