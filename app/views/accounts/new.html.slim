@@ -28,11 +28,11 @@
                 - terms = "\"I accept the Terms Of Use as listed #{link_to "Here", terms_path}\""
                 = form.label :terms, raw(terms)
     #TypeDetails.span8
-      #king_details.type.hidden.well
+      #king_details.detail.hidden.well
         = render partial: 'king_details', locals: { form: form }
-      #storyteller_details.type.hidden.well
+      #storyteller_details.detail.hidden.well
         = render partial: 'storyteller_details', locals: { form: form }
-      #hero_details.type.hidden.well
+      #hero_details.detail.hidden.well
         = render partial: 'hero_details', locals: { form: form }
     .row
       .actions.span14
