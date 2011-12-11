@@ -1,19 +1,40 @@
 = form_for @account do |form|
   = render partial: 'errors', locals: { form: form }
-  fieldset
+  fieldset.row
+    legend
+      header
+        h1 Create Your Account
+        p Who are you in the big picture? What do you bring to the table?
+    hr
     .clearfix
       = render partial: 'type_select', locals: { form: form }
-    = render partial: 'form', locals: { form: form }
-    #TypeForm
-      #king_form.type.hidden= render partial: 'king_form', locals: { form: form }
-      #storyteller_form.type.hidden= render partial: 'storyteller_form', locals: { form: form }
-      #hero_form.type.hidden= render partial: 'hero_form', locals: { form: form }
-    .clearfix
-      = form.label :terms
-      .input
-        ul.inputs-list
-          li
-            label= form.check_box :terms
-    .actions
-      = form.submit class: "btn large primary"
+    hr
+    .span8
+      #TypeForm
+        #king_form.type.hidden
+          = render partial: 'king_form', locals: { form: form }
+        #storyteller_form.type.hidden
+          = render partial: 'storyteller_form', locals: { form: form }
+        #hero_form.type.hidden
+          = render partial: 'hero_form', locals: { form: form }
+      = render partial: 'form', locals: { form: form }
+      .clearfix
+        = form.label :terms
+        .input
+          ul.inputs-list
+            li
+              label
+                = form.check_box :terms
+                - terms = "\"I accept the Terms Of Use as listed #{link_to "Here", terms_path}\""
+                = form.label :terms, raw(terms)
+    #TypeDetails.span8
+      #king_details.type.hidden.well
+        = render partial: 'king_details', locals: { form: form }
+      #storyteller_details.type.hidden.well
+        = render partial: 'storyteller_details', locals: { form: form }
+      #hero_details.type.hidden.well
+        = render partial: 'hero_details', locals: { form: form }
+    .row
+      .actions.span14
+        = form.submit class: "btn large primary"
 

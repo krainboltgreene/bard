@@ -4,15 +4,19 @@
 $ ->
   $('#TypeSelect .type .btn input').change ->
     $('#TypeSelect .type .btn').removeClass 'primary'
+    $('#TypeSelect .type').removeClass 'well'
     if $(this).is ':checked'
       $(this).parent().addClass 'primary'
     else
       $(this).parent().removeClass 'primary'
-    $('fieldset #TypeForm .type').fadeOut 'fast'
+    $('fieldset #TypeForm .type').fadeOut 'veryfast'
+    $('fieldset #TypeForm .details').fadeOut 'veryfast'
+
     switch $(this).attr 'value'
       when 'king'
-        $('fieldset #TypeForm #king_form.type').fadeIn 'fast'
+        $('fieldset #TypeForm #king_form').fadeIn 'veryfast'
       when 'storyteller'
-        $('fieldset #TypeForm #storyteller_form.type').fadeIn 'fast'
+        $('fieldset #TypeForm #storyteller_form').fadeIn 'veryfast'
       when 'hero'
-        $('fieldset #TypeForm #hero_form.type').fadeIn 'fast'
+        $('fieldset #TypeForm #hero_form').fadeIn 'veryfast'
+        $('fieldset #TypeDetails #hero_details').fadeIn 'veryfast'
