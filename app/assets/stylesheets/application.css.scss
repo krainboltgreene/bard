@@ -3,6 +3,10 @@
 // the top of the compiled file, but it's generally better to create a new file per style scope.
 
 //= require_self
+//= require guiders
+//= require fancybox
+//= require fancybox-buttons
+//= require fancybox-thumbs
 //= require_tree .
 
 body article.container {
