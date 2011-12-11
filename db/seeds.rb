@@ -2,7 +2,7 @@ Account.delete_all
 Feature.delete_all
 
 5.times do
-  master = Fabricate(:master)
+  king = Fabricate(:king)
   5.times do
     epic = Fabricate(:epic)
 
@@ -22,6 +22,6 @@ Feature.delete_all
       storyteller.stories << story
     end
 
-    master.epics << epic
+    king.epics << epic
   end
 end

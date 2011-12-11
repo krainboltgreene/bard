@@ -1,11 +1,11 @@
 = form_for @account do |form|
   = render partial: 'errors', locals: { form: form }
   fieldset
-    legend Sign Up
-    = render partial: 'type_select', locals: { form: form }
+    .clearfix
+      = render partial: 'type_select', locals: { form: form }
     = render partial: 'form', locals: { form: form }
     #TypeForm
-      #master_form.type.hidden= render partial: 'master_form', locals: { form: form }
+      #king_form.type.hidden= render partial: 'king_form', locals: { form: form }
       #storyteller_form.type.hidden= render partial: 'storyteller_form', locals: { form: form }
       #hero_form.type.hidden= render partial: 'hero_form', locals: { form: form }
     .clearfix
@@ -14,7 +14,6 @@
         ul.inputs-list
           li
             label= form.check_box :terms
-    = form.hidden_field :account_type
     .actions
       = form.submit class: "btn large primary"
 

@@ -1,7 +1,9 @@
 = link_to "Bard", "/", class: "brand"
 
+ul.nav
+  li= link_to "About", about_path
+  li= link_to "Support", support_path
 
-= form_tag sessions_path do
-  = email_field_tag :email, params[:email]
-  = password_field_tag :password
-  = submit_tag "Sign in", class: "btn small error"
+ul.nav.secondary-nav
+  li= link_to "Sign in", signin_path
+  li= link_to "Sign up", signup_path

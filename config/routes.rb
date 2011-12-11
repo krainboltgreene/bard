@@ -13,6 +13,7 @@ Bard::Application.routes.draw do
   get "about", controller: :pages, action: :about, as: :about
   get "jobs", controller: :pages, action: :jobs, as: :jobs
   get "terms", controller: :pages, action: :terms, as: :terms
+  get "support", controller: :pages, action: :support, as: :support
   get "policy", controller: :pages, action: :policy, as: :policy
   get "splash", controller: :pages, action: :splash, as: :splash
   get "beta", controller: :pages, action: :beta, as: :beta

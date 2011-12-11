@@ -1,17 +1,17 @@
 #TypeSelect.row
-  section#master.type.span-one-third
+  section#king.type.span-one-third
     header
-      h1 Master
-    .icon
-      = image_tag "master.jpg"
+      h1 King
+    .icon.clearfix
+      = image_tag "king.jpg"
     p
-      label.btn.large for="account_type_master"
-        | I'm The Master
-        = radio_button_tag :account_type, :master
+      label.btn.large for="account_type_king"
+        | I'm The King
+        = radio_button_tag :account_type, :king
   section#storyteller.type.span-one-third
     header
       h1 Storyteller
-    .icon
+    .icon.clearfix
       = image_tag "storyteller.jpg"
     p
       label.btn.large for="account_type_storyteller"
@@ -20,7 +20,7 @@
   section#hero.type.span-one-third
     header
       h1 Hero
-    .icon
+    .icon.clearfix
       = image_tag "hero.jpg"
     p
       label.btn.large for="account_type_hero"

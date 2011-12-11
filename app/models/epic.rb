@@ -3,5 +3,5 @@ class Epic < Feature
 
   has_many :stories, as: :storyism
 
-  belongs_to :master
+  belongs_to :king
 end
