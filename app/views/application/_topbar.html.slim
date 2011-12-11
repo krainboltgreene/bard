@@ -6,6 +6,9 @@ ul.nav
 
 ul.nav.secondary-nav
   - if current_user.present?
+    li= image_tag current_user.avatar
+    li= link_to current_user.name, account_path(current_user)
+    li= link_to "Sign Out", signout_path
   - else
     li= link_to "Sign in", signin_path
     li= link_to "Sign up", signup_path

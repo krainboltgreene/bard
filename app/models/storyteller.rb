@@ -1,5 +1,5 @@
 class Storyteller < Account
-  has_many :stories, as: :storyism
+  has_many :stories
 
   attr_accessible :email
   attr_accessible :encryped_password

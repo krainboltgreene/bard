@@ -28,7 +28,7 @@ class Account
   with_options presence: true do |model|
     model.validates :email, { uniqueness: true,
       format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, length: 0..256 }
-    model.validates :password, confirmation: true, length: 8..256
+    model.validates :password, confirmation: true, length: 8..256, on: :create
     model.validates :name, format: /[\w\s\-\,\.]/, length: 4..256
   end
 
@@ -44,6 +44,11 @@ class Account
     next_level = level.succ
     next_level * ( next_level - 1 ) * 1000
     next_level - xp
+  end
+
+  def avatar
+    gravatar_id = Digest::MD5::hexdigest(email).downcase
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=32"
   end
 
   private

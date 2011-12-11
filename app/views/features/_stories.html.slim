@@ -1,0 +1,6 @@
+ul#Stories.row
+  - current_user.story.epic.stories.each do |story|
+    li.story.span3
+      .well
+        = image_tag story.storyteller.avatar
+        p= story.details

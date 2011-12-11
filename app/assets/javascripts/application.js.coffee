@@ -7,15 +7,16 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery-ui
+#= require slides
+#= require fancybox
+#= require guiders
+#= require isotope
 #= require alerts
 #= require twipsy
 #= require popover
-#= require fancybox
-#= require guiders
 #= require modal
 #= require buttons
 #= require scrollspy
-#= require slides
 #= require tabs
 #= require_tree .
 

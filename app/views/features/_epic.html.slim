@@ -1,6 +1,22 @@
 - Rails.logger.ap current_user
 - epic = current_user.story.epic
-header
-  h1= epic.details
-  .health
-  .monster
+section#Epic.row
+  header.row
+    .span16
+      h1= epic.details
+    .span4
+      .monster
+        = image_tag "monster.jpg", width: "128px"
+    .span12
+      .hp
+        meter min='0' max='100' value=epic.stories.count./(100)
+  section#team
+    header
+      h2 Party Members
+    p
+      em The storytellers for this epic are&nbsp;
+      = raw epic.stories.map(&:storyteller).map{|s| link_to s.name, account_path(s) }.join(', ')
+    hr
+    p
+      em The heroes for this epic are&nbsp;
+      = raw epic.stories.map(&:hero).map{|s| link_to s.name, account_path(s) }.join(', ')
