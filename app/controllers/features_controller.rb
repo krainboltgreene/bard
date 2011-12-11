@@ -1,6 +1,9 @@
 class FeaturesController < ApplicationController
   before_filter :require_login
 
+  def dashboard
+  end
+
   # GET /features
   # GET /features.json
   def index

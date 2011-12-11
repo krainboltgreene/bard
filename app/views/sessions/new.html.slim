@@ -1,20 +1,38 @@
-h1 Sign in
 = form_tag sessions_path do
-  fieldset
-    legend Sign in to your account, if you have one
-    .clearfix
-      = label_tag :email
-      .input
-        = email_field_tag :email, params[:email]
-    .clearfix
-      = label_tag :password
-      .input
-        = password_field_tag :password
-    .clearfix
-      = label_tag :remember_me
-      .input
-        ul.inputs-list
-          li
-            label= check_box_tag :remember_me, 1, params[:remember_me]
-    .actions
-      = submit_tag "Sign in", class: "btn large primary"
+  fieldset.row
+    .span8
+      legend
+        header
+          h1 Sign In
+        p Sign in to your account, if you have one
+      .clearfix
+        - popover = { title: "Email Field", content: "Enter the email address you used to sign up." }
+        = label_tag :email
+        .input
+          = email_field_tag :email, params[:email], data: popover
+      .clearfix
+        - popover = { title: "Password Field", content: "Enter the password you used to sign up. It's between 8 and 256 characters long, letters and numbers." }
+        = label_tag :password
+        .input
+          = password_field_tag :password, nil, data: popover
+      .clearfix
+        - popover = { title: "Remember Me!", content: "Check this and you wont log out for another 7 days." }
+        .input
+          .input-append
+            = label_tag :remember_me, "Remember me!", class: "btn"
+            label.add-on
+              = check_box_tag :remember_me, 1, params[:remember_me], data: popover
+
+    .span8
+      .well
+        header
+          h1 Welcome back!
+        p Here's the latest news:
+        ol
+          li We've launched 0.6.0!
+          li We've launched 0.5.0!
+          li We've launched 0.4.0!
+          li The hunt is on...for prize money!
+    .row
+      .actions.span14
+        = submit_tag "Sign in", class: "btn large primary"

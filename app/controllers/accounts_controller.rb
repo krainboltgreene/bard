@@ -10,23 +10,19 @@ class AccountsController < ApplicationController
       when "king" then king.new params[:account]
       when "storyteller" then Storyteller.new params[:account]
       when "hero" then Hero.new params[:account]
+      else Account.new params[:account]
     end
 
     if @account.save
       login @account.email, @account.password
-      redirect_back_or_to dashboard_path, notice: "Signed up!"
+      redirect_back_or_to root_url, notice: "you've been signed up!"
     else
-      render :new
+      render :new, error: @account.errors.full_messages
     end
   end
 
   def edit
   end
-
-  def dashboard
-
-  end
-
 
   def index
     @accounts = Account.all

@@ -1,4 +1,4 @@
-class Master < Account
+class King < Account
   has_many :epics
 
   field :company_name

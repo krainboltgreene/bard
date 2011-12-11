@@ -1,0 +1,24 @@
+- if notices.is_a? Array
+  ul.notices
+    - notices.each do |notice|
+      li.alert-message.info
+        - if notice.is_a? String
+          strong Hey! &nbsp;
+          = notice
+          a.close href="#" x
+        - elsif notice.is_a? Hash
+          a.close href="#" x
+          header
+            h1= notice[:head]
+          p= notice[:body]
+- elsif notice.is_a? String
+  p.alert-message.info
+    strong Hey! &nbsp;
+    = notice
+    a.close href="#" x
+- elsif notice.is_a? Hash
+  section
+    a.close href="#" x
+    header
+      h1= notices[:head]
+    p= notices[:body]

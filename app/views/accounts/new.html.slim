@@ -4,7 +4,7 @@
     legend
       header
         h1 Create Your Account
-        p Who are you in the big picture? What do you bring to the table?
+      p Who are you in the big picture? What do you bring to the table?
     hr
     .clearfix
       = render partial: 'type_select', locals: { form: form }
@@ -24,8 +24,8 @@
           ul.inputs-list
             li
               label
-                = form.check_box :terms
-                - terms = "\"I accept the Terms Of Use as listed #{link_to "Here", terms_path}\""
+                = form.check_box :termsx`
+                - terms = "\"I accept the Terms Of Use as listed #{link_to "here", terms_path}\""
                 = form.label :terms, raw(terms)
     #TypeDetails.span8
       #king_details.detail.hidden.well

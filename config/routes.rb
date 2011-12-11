@@ -1,10 +1,11 @@
 Bard::Application.routes.draw do
 
-  resources :features
-  resources :sessions
-  resources :accounts do
+  resources :features do
     get 'dashboard', action: :dashboard, on: :collection
   end
+
+  resources :sessions
+  resources :accounts
 
   get "signin", controller: :sessions, action: :new, as: :signin
   get "signout", controller: :sessions, action: :destroy, as: :signout

@@ -18,3 +18,6 @@
 #= require slides
 #= require tabs
 #= require_tree .
+
+$(".alert-message").alert()
+$("[data-title][data-content]").popover("title": "data-title")

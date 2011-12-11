@@ -5,15 +5,18 @@ class SessionsController < ApplicationController
   def create
     account = login params[:email], params[:password], params[:remember_me]
     if account.present?
-      redirect_back_or_to root_url, notice: "Signed in!"
+      notice = "You've been signed into #{account.email}!"
+      redirect_back_or_to dashboard_feature_path, notice: notice
     else
-      flash.now.alert = "Email or password was invalid."
+      notice = "The email or password you entered was incorrect, try again!"
+      flash.now.notice = notice
       render :new
     end
   end
 
   def destroy
     logout
-    redirect_to root_url, notice: "Logged out!"
+    notice = "You've been logged out!"
+    redirect_to root_url, notice: notice
   end
 end

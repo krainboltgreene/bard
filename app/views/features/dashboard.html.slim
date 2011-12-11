@@ -1,3 +1,11 @@
+section#Epic
+  = render partial: 'epic'
+
+section#Stories
+  = render partial: 'active_stories'
+  = render partial: 'stories'
+  = render partial: 'backlog_stories'
+
 div.row
   div.floatLeft
     img#EpicPicture src='' alt=''
@@ -24,5 +32,3 @@ ul
     button.btn Stop
     button.btn Abandon
     button.btn Edit
-
-
