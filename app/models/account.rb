@@ -5,7 +5,16 @@ class Account
 
   authenticates_with_sorcery!
 
-  attr_accessible :email, :encryped_password, :password, :password_confirmation, :name, :terms
+  attr_accessible :email
+  attr_accessible :encryped_password
+  attr_accessible :password
+  attr_accessible :password_confirmation
+  attr_accessible :name
+  attr_accessible :terms
+  attr_accessible :role
+  attr_accessor :role
+  attr_accessor :company_name
+  attr_accessor :account_type
 
   field :email
   field :encryped_password

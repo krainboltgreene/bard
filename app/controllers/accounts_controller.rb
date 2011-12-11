@@ -5,10 +5,15 @@ class AccountsController < ApplicationController
   end
 
   def create
-    @account = Account.new params[:account]
+    @account = case params[:account_type]
+      when "master" then Master.new params[:account]
+      when "storyteller" then Storyteller.new params[:account]
+      when "hero" then Hero.new params[:account]
+    end
+
     if @account.save
-      login @account
-      redirect_to root_url, notice: "Signed up!"
+      login @account.email, @account.password
+      redirect_back_or_to dashboard_path, notice: "Signed up!"
     else
       render :new
     end

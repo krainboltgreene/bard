@@ -8,8 +8,8 @@
 #= require jquery_ujs
 #= require jquery-ui
 #= require alerts
-#= require popover
 #= require twipsy
+#= require popover
 #= require fancybox
 #= require guiders
 #= require modal

@@ -8,6 +8,9 @@
 //= require fancybox-buttons
 //= require fancybox-thumbs
 //= require_tree .
+.hidden {
+  display: none;
+}
 
 body article.container {
   margin-top: 75px;

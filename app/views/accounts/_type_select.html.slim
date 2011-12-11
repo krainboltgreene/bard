@@ -1,0 +1,28 @@
+#TypeSelect.row
+  section#master.type.span-one-third
+    header
+      h1 Master
+    .icon
+      = image_tag "master.jpg"
+    p
+      label.btn.large for="account_type_master"
+        | I'm The Master
+        = radio_button_tag :account_type, :master
+  section#storyteller.type.span-one-third
+    header
+      h1 Storyteller
+    .icon
+      = image_tag "storyteller.jpg"
+    p
+      label.btn.large for="account_type_storyteller"
+        | I'm The Storyteller
+        = radio_button_tag :account_type, :storyteller
+  section#hero.type.span-one-third
+    header
+      h1 Hero
+    .icon
+      = image_tag "hero.jpg"
+    p
+      label.btn.large for="account_type_hero"
+        | I'm The Hero
+        = radio_button_tag :account_type, :hero
