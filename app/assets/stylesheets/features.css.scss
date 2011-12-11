@@ -1,40 +1,17 @@
-#EpicProgress {
-  margin: 2.25em 0 1em;
-}
+// Place all the styles related to the Accounts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* Bah */
-.minor {
-  color: #AAA;
-  margin-top: -1em;
-  display: block;
-}
+article.features_controller {
+  #Epic {
+    header h1 {
+      font-size: 48px;
+    }
+  }
 
-#Stories {
-  list-style: none;
-}
-
-#Stories li > *, #Stories .twipsy-inner, #Stories meter {
-  vertical-align: middle;
-  display: inline-block;
-}
-
-#Stories h3 {
-  font-size: 1em;
-}
-
-#Stories .twipsy-inner {
-  font-size: 11px;
-  width: 35px;
-  padding: 0;
-  margin-right: 3px;
-}
-
-#Stories meter {
-  width: 420px;
-}
-
-#Stories .story-actions button {
-  width: 70px;
-  margin: 0 1px;
-  display: inline-block;
+  #Stories {
+    .story {
+      height: 256px;
+    }
+  }
 }

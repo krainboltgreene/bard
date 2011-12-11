@@ -1,26 +1,29 @@
 - Rails.logger.ap current_user
 - epic = current_user.story.epic
 section#Epic.row
-  header.row
-    = image_tag "monster.jpg", class: "well", width: "200px", style: "float: left;"
-    .span11.well
-      h1.name
-        = epic.name
-        small #{epic.challenge_rating} CR
-    .span11.well
-      .hp
-        meter min='0' max='100' value=epic.stories.count./(100)
-      h2.details
-        strong Epic &nbsp;- &nbsp;
-        = epic.details
-  section#team.well
-    header
-      h2 Party Members
-    #Storytellers
-      p
-        em The storytellers for this epic are&nbsp;
-        = raw epic.stories.map(&:storyteller).map{|s| link_to s.name, account_path(s) }.join(', ')
-    #Heroes
-      p
-        em The heroes for this epic are&nbsp;
-        = raw epic.stories.map(&:hero).map{|s| link_to s.name, account_path(s) }.join(', ')
+  header.span16
+    .row
+      .monster.span3.well style="text-align: center;"
+        = image_tag "monster.jpg", width: "120px"
+      .span11.well
+        h1
+          = epic.name
+          small &nbsp; #{epic.challenge_rating} CR
+        .hp
+          meter min='0' max='100' value=epic.stories.count./(100)
+        h3
+          strong Epic &nbsp;- &nbsp;
+          = epic.details
+  section#Team.span16
+    .row
+      .well
+        header
+          h2 Party Members
+        #Storytellers
+          p
+            em The storytellers for this epic are&nbsp;
+            = raw epic.stories.map(&:storyteller).map{|s| link_to s.name, account_path(s) }.join(', ')
+        #Heroes
+          p
+            em The heroes for this epic are&nbsp;
+            = raw epic.stories.map(&:hero).map{|s| link_to s.name, account_path(s) }.join(', ')

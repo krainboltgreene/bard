@@ -4,7 +4,7 @@
 
 section#Stories
   - if current_user.story.present?
-    = render partial: 'active_stories'
+    = render partial: 'active_story'
   = render partial: 'stories'
   = render partial: 'backlog_stories'
 

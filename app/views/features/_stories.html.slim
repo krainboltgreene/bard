@@ -2,6 +2,6 @@ ul#Stories.row
   - current_user.story.epic.stories.each do |story|
     li.story.span3
       .well
-        = image_tag story.storyteller.avatar
-        p= story.details
-        p= story.challenge_rating
+        = link_to story.storyteller.name, account_path(story.storyteller)
+        p = story.details
+        p #{story.challenge_rating} CR
