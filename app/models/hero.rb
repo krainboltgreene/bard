@@ -13,6 +13,7 @@ class Hero < Account
   attr_accessible :name
   attr_accessible :terms
   attr_accessible :role
+  attr_accessible :company_name
 
   authenticates_with_sorcery!
 

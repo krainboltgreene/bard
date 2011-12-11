@@ -12,6 +12,7 @@ class Account
   attr_accessible :name
   attr_accessible :terms
   attr_accessible :role
+  attr_accessible :company_name
   attr_accessor :role
   attr_accessor :company_name
   attr_accessor :account_type

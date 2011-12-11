@@ -3,6 +3,7 @@
     .container
       = render partial: 'topbar'
 
-section#Notifications.container
+- is_hidden = "hidden" unless flash[:notice] || flash[:error]
+section#Notifications.container class=is_hidden
   - if flash[:notice] || flash[:error]
     = render partial: 'notifications', locals: { notices: flash[:notice], error: flash[:error]}

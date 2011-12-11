@@ -5,8 +5,15 @@ class SessionsController < ApplicationController
   def create
     account = login params[:email], params[:password], params[:remember_me]
     if account.present?
+      correct_path = case account.class
+        when King then "campaign_feature_path"
+        when Storyteller then "team_organization_path"
+        when Hero then dashboard_features_path
+        else root_url
+      end
+
       notice = "You've been signed into #{account.email}!"
-      redirect_back_or_to dashboard_feature_path, notice: notice
+      redirect_back_or_to correct_path, notice: notice
     else
       notice = "The email or password you entered was incorrect, try again!"
       flash.now.notice = notice

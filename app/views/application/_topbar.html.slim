@@ -5,5 +5,7 @@ ul.nav
   li= link_to "Support", support_path
 
 ul.nav.secondary-nav
-  li= link_to "Sign in", signin_path
-  li= link_to "Sign up", signup_path
+  - if current_user.present?
+  - else
+    li= link_to "Sign in", signin_path
+    li= link_to "Sign up", signup_path

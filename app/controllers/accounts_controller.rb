@@ -15,9 +15,18 @@ class AccountsController < ApplicationController
 
     if @account.save
       login @account.email, @account.password
-      redirect_back_or_to root_url, notice: "you've been signed up!"
+
+      correct_path = case @account.class
+        when King then "campaign_feature_path"
+        when Storyteller then "team_organization_path"
+        when Hero then dashboard_features_path
+        else root_url
+      end
+
+      redirect_back_or_to correct_path, notice: "you've been signed up!"
     else
       @account = Account.new params[:account]
+
       render :new, notice: @account.errors.full_messages
     end
   end

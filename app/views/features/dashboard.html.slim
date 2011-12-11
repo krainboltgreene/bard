@@ -1,8 +1,10 @@
-section#Epic
-  = render partial: 'epic'
+- if current_user.story.present?
+  section#Epic
+    = render partial: 'epic'
 
 section#Stories
-  = render partial: 'active_stories'
+  - if current_user.story.present?
+    = render partial: 'active_stories'
   = render partial: 'stories'
   = render partial: 'backlog_stories'
 
