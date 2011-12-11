@@ -9,6 +9,79 @@
 //= require fancybox-thumbs
 //= require_tree .
 
-body article.container {
-  margin-top: 75px;
+h1, h2, h3, h4 {
+  color: #000;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 1em 0;
 }
+
+p {
+  margin: 1em 0;
+}
+
+body article.container {
+  margin-top: 40px;
+}
+
+.row {
+  margin-left: 0;
+}
+
+.box {
+  border: 1px solid #EEE;
+  background: #F4F4F4;
+  padding: 1em;
+}
+
+#Slogan {
+  font-size: 3.5em;
+  text-align: center;
+}
+
+#Features, #Screenshot {
+  display: inline;
+}
+
+#Features, #Screenshot {
+  display: inline-block;
+}
+
+#Features {
+  font-size: 1.25em;
+  text-align: left;
+  margin-right: 1em;
+}
+
+#Features h2 {
+  font-size: 2em;
+  margin: 0.25em 0 0.5em;
+}
+
+#Features h2::after {
+  border-top: 1px solid #EEE;
+  border-bottom: 1px solid #FAFAFA;
+  content: '';
+  margin-top: 0.5em;
+  display: block;
+}
+
+#Features li {
+  list-style: square;
+  color: #000;
+  font-size: 1.25em;
+  line-height: normal;
+}
+
+#Features a {
+  font-size: 1.25em;
+  text-align: center;
+  padding: 0.75em 0;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+#Pitch {
+  font-size: 1.25em;
+}
+
