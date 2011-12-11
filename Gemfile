@@ -18,11 +18,9 @@ group :production do
   gem 'newrelic_rpm', '3.3.0'
 end
 
-group :development, :test do
   gem 'fabrication', '1.2.0'
   gem 'forgery', '0.5.0'
   gem 'awesome_print', '1.0.1'
-end
 
 group :development do
   gem 'heroku', '2.14.0'
