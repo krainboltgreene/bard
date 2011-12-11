@@ -27,11 +27,13 @@ class Account
   before_create :convert_terms
 
   def level
-
+    ( 0.01 * ( 50 + 4 * Math.sqrt( 500 + xp ) ) ).round
   end
 
   def remaining_experience
-
+    next_level = level.succ
+    next_level * ( next_level - 1 ) * 1000
+    next_level - xp
   end
 
   private
