@@ -8,3 +8,33 @@
   margin-top: -1em;
   display: block;
 }
+
+#Stories {
+  list-style: none;
+}
+
+#Stories li > *, #Stories .twipsy-inner, #Stories meter {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+#Stories h3 {
+  font-size: 1em;
+}
+
+#Stories .twipsy-inner {
+  font-size: 11px;
+  width: 35px;
+  padding: 0;
+  margin-right: 3px;
+}
+
+#Stories meter {
+  width: 420px;
+}
+
+#Stories .story-actions button {
+  width: 70px;
+  margin: 0 1px;
+  display: inline-block;
+}
