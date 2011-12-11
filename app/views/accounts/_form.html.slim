@@ -9,7 +9,7 @@
   .input
     = form.text_field :name, data: popover
 .clearfix
-  - popover = { title: "Password Field", content: "Your password can be 8 single letters or 256 alpha-numeric-symbol characters. Your choice." }
+  - popover = { title: "Password Field", content: "Your password can be 8 letters, 256 alpha-numeric-symbol characters, or anything in between. Your choice." }
   = form.label :password
   .input
     = form.password_field :password, data: popover

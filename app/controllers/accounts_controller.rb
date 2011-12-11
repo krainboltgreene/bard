@@ -18,7 +18,7 @@ class AccountsController < ApplicationController
       redirect_back_or_to root_url, notice: "you've been signed up!"
     else
       @account = Account.new params[:account]
-      render :new, error: @account.errors.full_messages
+      render :new, notice: @account.errors.full_messages
     end
   end
 
