@@ -1,0 +1,16 @@
+.clearfix
+  = form.label :email
+  .input
+    = form.email_field :email
+.clearfix
+  = form.label :name
+  .input
+    = form.text_field :name
+.clearfix
+  = form.label :password
+  .input
+    = form.password_field :password
+.clearfix
+  = form.label :password_confirmation, "Confirmation"
+  .input
+    = form.password_field :password_confirmation

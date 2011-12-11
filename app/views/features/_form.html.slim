@@ -1,0 +1,10 @@
+= form_for @feature do |f|
+  -if @feature.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@feature.errors.count, "error")} prohibited this feature from being saved:"
+      ul
+        - @feature.errors.full_messages.each do |msg|
+          li= msg
+
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,4 @@
+.clearfix
+  = form.label :role
+  .input
+    = form.select :role, options_for_select(Hero::ROLES)

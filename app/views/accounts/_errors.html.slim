@@ -1,0 +1,7 @@
+- if @account.errors.any?
+  section.error_messages
+    header
+      h1 Form is invalid
+    ul
+      - @account.errors.full_messages.each do |message|
+        li= message

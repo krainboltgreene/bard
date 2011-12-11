@@ -1,0 +1,9 @@
+h1 Edit Account
+
+= form_for @account do |form|
+  = render partial: 'errors', locals: { form: form }
+  fieldset
+    legend Change you account
+    = render partial: 'form', locals: { form: form }
+    .actions
+      = form.submit class: "btn large primary"

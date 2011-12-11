@@ -1,0 +1,20 @@
+h1 Sign in
+= form_tag sessions_path do
+  fieldset
+    legend Sign in to your account, if you have one
+    .clearfix
+      = label_tag :email
+      .input
+        = email_field_tag :email, params[:email]
+    .clearfix
+      = label_tag :password
+      .input
+        = password_field_tag :password
+    .clearfix
+      = label_tag :remember_me
+      .input
+        ul.inputs-list
+          li
+            label= check_box_tag :remember_me, 1, params[:remember_me]
+    .actions
+      = submit_tag "Sign in", class: "btn large primary"

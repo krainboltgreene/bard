@@ -1,0 +1,20 @@
+// Place all the styles related to the Accounts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+article.accounts_controller {
+  #TypeSelect {
+    section.type {
+      text-align: center;
+      p {
+        display: inline-block;
+        label {
+          text-align: center;
+        }
+        input {
+          position: absolute;
+          left: -9999em;
+        }
+      }
+    }
+  }
+}
