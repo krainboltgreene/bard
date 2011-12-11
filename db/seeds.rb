@@ -46,4 +46,4 @@ me = Fabricate :hero,
   email: "me@kurtisrainboltgreene.name",
   password: "12341234"
 
-Story.first.hero = me
+Story.last.hero = me

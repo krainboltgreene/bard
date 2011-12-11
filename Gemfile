@@ -14,6 +14,10 @@ gem 'coffee-rails', '3.1.1'
 gem 'jquery-rails', '1.0.19'
 # gem 'redcarpet', '2.0.0'
 
+group :production do
+  gem 'newrelic_rpm', '3.3.0'
+end
+
 group :development, :test do
   gem 'fabrication', '1.2.0'
   gem 'forgery', '0.5.0'
