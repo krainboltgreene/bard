@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
     end
 
     if @account.save
-      s = Story.last.hero @account
+      s = Story.last.hero = @account
       s.save
       login params[:account][:email], params[:account][:password]
 
