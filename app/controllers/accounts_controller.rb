@@ -14,6 +14,8 @@ class AccountsController < ApplicationController
     end
 
     if @account.save
+      s = Store.last.hero @account
+      s.save
       login params[:account][:email], params[:account][:password]
 
       correct_path = case @account.class
