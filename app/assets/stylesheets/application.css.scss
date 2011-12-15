@@ -1,6 +1,6 @@
 // This is a manifest file that'll automatically include all the stylesheets available in this directory
 // and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
-// the top of the compiled file, but it's generally better to create a new file per style scope.
+// the top of the compiled file,  but it's generally better to create a new file per style scope.
 
 //= require_self
 //= require guiders
@@ -10,10 +10,44 @@
 //= require progress
 //= require_tree .
 
+$primary_color: #E50D23;
+$secondary_color: #F97522;
+$dark_primary_color: #B055B5;
+$light_primary_color: #F9F966;
+$minor_color: #FFF1E0;
+
 .hidden {
   display: none;
 }
 
-body > article.container {
-  margin-top: 65px;
+body > article {
+  margin-top: 95px;
+}
+
+.topbar-inner {
+  background: $secondary_color;
+  background-image: -webkit-linear-gradient(45deg, rgba(240, 240, 240, .1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+
+  .brand {
+    position: absolute;
+    left: 50px;
+    padding: 20px 28px 18px 28px;
+    font-size: 34px;
+    font-family: 'Spirax', cursive;
+    background-color: $primary_color;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45),inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  a {
+    color: darken($minor_color, 5%);
+  }
+
+  .nav.secondary-nav li:last-child a {
+    color: $minor_color;
+  }
+
+  .brand:hover {
+    background: lighten($primary_color, 7%);
+  }
 }

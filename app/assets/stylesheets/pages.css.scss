@@ -1,28 +1,33 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-article.pages_controller {
-  h1#slogan {
-    font-size: 72px;
-    font-family: 'Lobster';
-    font-weight: 700;
-    text-align: center;
-    padding-bottom: 25px;
-  }
-  section#ShortPitch {
-      text-align: center;
-    ul {
-      padding-left: 50px;
-      li {
-        text-align: left;
-        font-size: 16px;
-        color: black;
+.pages_controller {
+  article {
+    header {
+      h1#slogan {
+        font-size: 72px;
+        font-family: 'Lobster';
+        font-weight: 700;
+        text-align: center;
+        padding: 75px 0px;
       }
     }
-  }
-  section#LongPitch {
-    header h1 {
-      text-align: center;
+    section#ShortPitch {
+        text-align: center;
+      ul {
+        padding-left: 50px;
+        li {
+          text-align: left;
+          font-size: 16px;
+          color: black;
+        }
+      }
     }
+    section#LongPitch {
+      header h1 {
+        text-align: center;
+      }
+    }
+    hr { padding: 50px 0;}
   }
 }

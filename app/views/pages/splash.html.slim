@@ -12,9 +12,9 @@ section#ShortPitch.row
         li Make your process fun and interactive
         li Put all of your progress in view of the client
       .clearfix
-        p= link_to "Make Your Progress Count, Today!", signup_path, class: "btn large primary"
+        p= link_to "Make Your Progress Count", signup_path, class: "btn large primary"
   section.span8
-    - popover = { title: "Mandy", content: "This is Mandy, he's the little monster that couldn't. If only he had some process to see what he was doing wrong!" }
+    - popover = { title: "Mandy", content: "This is Mandy, he's the little monster that couldn't. If only he had some process to see what he was doing wrong!", position: "above" }
     = image_tag 'mandi.jpg', data: popover
 hr
 section#LongPitch.row

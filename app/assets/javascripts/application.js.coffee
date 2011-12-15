@@ -22,4 +22,7 @@
 #= require_tree .
 
 $(".alert-message").alert()
-$("[data-title][data-content]").popover("title": "data-title")
+popovers = $("[data-title][data-content]")
+popovers.popover
+  "title": "data-title",
+  "position": popovers.data("position") or "right"

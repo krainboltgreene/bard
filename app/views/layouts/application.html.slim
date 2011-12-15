@@ -1,19 +1,19 @@
+- controller_name = controller.controller_name + '_controller'
+- action_name = controller.action_name + '_action'
 doctype html
 html class="no-js" lang="en"
   head
     = render partial: 'meta'
-    link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Spirax|Lobster'
+    = stylesheet_link_tag 'http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css'
     = stylesheet_link_tag 'application', defer: true, async: true
-    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:700|Lobster'
     = csrf_meta_tags
-  body
+  body class=controller_name id=action_name
     - if view_has_header?
       header
         = render partial: 'header'
 
-    - controller_name = controller.controller_name + '_controller'
-    - action_name = controller.action_name + '_action'
-    article.container class=controller_name id=action_name
+    article.container
       == yield
 
     - if view_has_footer?

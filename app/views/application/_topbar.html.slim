@@ -10,5 +10,6 @@ ul.nav.secondary-nav
     li= link_to current_user.name, account_path(current_user)
     li= link_to "Sign Out", signout_path
   - else
-    li= link_to "Sign in", signin_path
-    li= link_to "Sign up", signup_path
+    li= link_to "Sign In", signin_path
+    li
+      strong= link_to "Sign Up", signup_path
