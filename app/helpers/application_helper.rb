@@ -5,6 +5,14 @@ module ApplicationHelper
     "Fernando Oritz" => "...", "Cameron Samson" => "verros@gmail.com" }
   KEYWORDS = [ "web application", "agile", "tracker", "feature", "story", "gamification" ]
 
+  POPOVERS = {
+      mandy: {
+        title: "Little Mandy",
+        content:  "This is Little Mandy, he's the little monster that couldn't.
+                    If only he had some process to see what he was doing wrong!"
+      }
+    }
+
   def view_title(title = nil)
     if title.present? then "#{NAME} - #{title}" else NAME end
   end

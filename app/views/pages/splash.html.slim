@@ -1,27 +1,24 @@
 header
-  .clearfix
-    h1#slogan Turn The Mundane Into Epic
+  h1#slogan Turn The Mundane Into Epic
 
-section#ShortPitch.row
-  section.span8
-    .well
-      header
-        h1 Gamified Project Control
-      ul
-        li Motivate your work force with incentives
-        li Make your process fun and interactive
-        li Put all of your progress in view of the client
-      .clearfix
-        p= link_to "Make Your Progress Count", signup_path, class: "btn large primary"
-  section.span8
-    - popover = { title: "Mandy", content: "This is Mandy, he's the little monster that couldn't. If only he had some process to see what he was doing wrong!", position: "above" }
-    = image_tag 'mandi.jpg', data: popover
-hr
-section#LongPitch.row
+.row
+  section#short_pitch.span8
+    header
+      h1 Gamified Project Control
+    ul
+      li Motivate your work force with incentives
+      li Make your process fun and interactive
+      li Put all of your progress in view of the client
+    .clearfix
+      p = link_to "Make Your Progress Count", signup_path, class: "btn large primary"
+
+  section#monster.span8
+    = image_tag 'mandi.jpg', data: ApplicationHelper::POPOVERS[:mandy]
+
   section.span-one-third
     header
       h1 Client Is King
-    p.well
+    p
       | Strip steak turducken sausage kielbasa prosciutto shank.
       | Turkey pork belly pork, drumstick biltong tri-tip bacon short
       | loin sausage chicken corned beef cow. Boudin kielbasa shankle
@@ -31,7 +28,7 @@ section#LongPitch.row
   section.span-one-third
     header
       h1 Tell A Story
-    p.well
+    p
       | Pork tri-tip shank short loin pork chop, pig biltong venison filet mignon
       | spare ribs tail pork belly boudin meatloaf drumstick. Tongue hamburger
       | pork, drumstick ribeye bresaola pancetta rump corned beef chicken
@@ -41,7 +38,7 @@ section#LongPitch.row
   section.span-one-third
     header
       h1 Be The Hero
-    p.well
+    p
       | Hamburger pork loin bresaola, beef ribs venison shankle flank
       | meatball kielbasa shank prosciutto. Rump hamburger andouille
       | frankfurter bacon, t-bone tenderloin boudin meatball fatback

@@ -23,6 +23,10 @@ group :development do
   gem 'awesome_print', '1.0.1'
 end
 
+group :test do
+  gem 'cucumber', '1.1.4'
+end
+
 group :assets do
   gem 'uglifier', '1.1.0'
 end
