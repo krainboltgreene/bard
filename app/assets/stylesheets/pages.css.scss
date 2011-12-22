@@ -7,14 +7,21 @@
       font-size: 72px;
       font-family: 'Lobster', cursive;
       text-align: center;
+      padding: 45px;
     }
     section {
-      #short_pitch {
-
+      &#short_pitch {
+        header h1 { text-align: center; }
+        ul li { font-size: 18px; line-height: 2em; }
+        p { text-align: center; }
       }
 
-      #long_pitch {
+      &#monster {
+        text-align: center;
+      }
 
+      &#long_pitch {
+        margin-top: 75px;
       }
     }
   }
