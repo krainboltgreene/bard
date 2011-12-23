@@ -6,3 +6,4 @@ title = view_title @title
 = tag :meta, name: 'author', content: view_author(@author)
 = tag :meta, name: 'keywords', content: view_keywords(@keywords)
 = tag :meta, name: 'stripe-key', content: "STRIPE_PUBKEY"
+= javascript_include_tag 'modernizr', defer: true, async: true
