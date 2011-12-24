@@ -8,7 +8,6 @@
 #= require jquery_ujs
 #= require jquery-ui
 #= require slides
-#= require fancybox
 #= require guiders
 #= require isotope
 #= require progress
@@ -24,3 +23,6 @@
 $(".alert-message").alert()
 $("form [data-title][data-content]").popover "title" : "data-title"
 $("[data-twispy]").twipsy "title" : "data-twispy"
+$(".error_messages.modal").modal 'show'
+$(".error_messages.modal .modal-footer .btn").click ->
+  $(".error_messages.modal").modal 'toggle'

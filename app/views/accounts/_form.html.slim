@@ -1,20 +1,12 @@
 .clearfix
-  - popover = { title: "Email Field", content: "We will never sell or distribute your email. Even if you tell us to." }
   = form.label :email
-  .input
-    = form.email_field :email, data: popover
+  .input = form.email_field :email, data: popover_for(:email)
 .clearfix
-  - popover = { title: "Name Field", content: "This field is for your full name, for example 'John Q. Public'." }
   = form.label :name
-  .input
-    = form.text_field :name, data: popover
+  .input = form.text_field :name, data: popover_for(:name)
 .clearfix
-  - popover = { title: "Password Field", content: "Your password can be 8 letters, 256 alpha-numeric-symbol characters, or anything in between. Your choice." }
   = form.label :password
-  .input
-    = form.password_field :password, data: popover
+  .input = form.password_field :password, data: popover_for(:password)
 .clearfix
-  - popover = { title: "Password Confirmation", content: "Simply retype your password here." }
   = form.label :password_confirmation, "Confirmation"
-  .input
-    = form.password_field :password_confirmation, data: popover
+  .input = form.password_field :password_confirmation, data: popover_for(:confirmation)

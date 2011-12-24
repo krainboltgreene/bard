@@ -1,7 +1,8 @@
 header.page-header
   h1 Create Your Account
 = form_for @account do |form|
-  = render partial: 'errors', locals: { form: form }
+  - if @errors.any?
+    = render partial: 'errors', locals: { form: form }
   fieldset.row
     .well = render partial: 'type_select', locals: { form: form }
     .span8
@@ -17,16 +18,12 @@ header.page-header
             li
               label
                 = form.check_box :terms
-                - terms = "\"I accept the Terms Of Use as listed #{link_to "here", terms_path}\""
+                - terms = "I accept the #{link_to "Terms Of Use", terms_path}"
                 = form.label :terms, raw(terms)
     #type_details.span8
-      #king.detail.hidden
-        = render partial: 'king_details', locals: { form: form }
-      #storyteller.detail.hidden
-        = render partial: 'storyteller_details', locals: { form: form }
-      #hero.detail.hidden
-        = render partial: 'hero_details', locals: { form: form }
+      #king.detail.hidden = render partial: 'king_details', locals: { form: form }
+      #storyteller.detail.hidden = render partial: 'storyteller_details', locals: { form: form }
+      #hero.detail.hidden = render partial: 'hero_details', locals: { form: form }
     .row
-      .actions.span14
-        = form.submit class: "btn large primary"
+      .actions.span14 = form.submit class: "btn large primary"
 

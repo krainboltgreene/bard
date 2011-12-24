@@ -1,4 +1,3 @@
 .clearfix
   = form.label :company_name
-  .input
-    = form.text_field :company_name
+  .input = form.text_field :company_name, data: popover_for(:company_name)

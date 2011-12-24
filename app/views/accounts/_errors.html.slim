@@ -1,7 +1,9 @@
-- if @account.errors.any?
-  section.error_messages
-    header
-      h1 Form is invalid
-    ul
-      - @account.errors.full_messages.each do |message|
-        li= message
+section.error_messages.modal.fade
+  header.modal-header.topbar-inner
+    a.close href="#" x
+    h2 Form is invalid
+  ul.modal-body
+    - @errors.full_messages.each do |message|
+      li= message
+  section.actions.modal-footer
+    = link_to "Close", "#", class: "btn error"

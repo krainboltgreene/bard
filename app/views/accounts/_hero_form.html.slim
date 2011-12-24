@@ -1,5 +1,3 @@
 .clearfix
-  - popover = { title: "Role Field", content: "The role field is further classification of your account." }
   = form.label :role
-  .input
-    = form.select :role, options_for_select(Hero::ROLES), {}, data: popover
+  .input = form.select :role, options_for_select(Hero::ROLES), {}, data: popover_for(:role)

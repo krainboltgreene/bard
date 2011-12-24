@@ -6,29 +6,36 @@ class AccountsController < ApplicationController
   end
 
   def create
-    @account = case params[:account_type]
-      when "king" then king.new params[:account]
-      when "storyteller" then Storyteller.new params[:account]
-      when "hero" then Hero.new params[:account]
-      else Account.new params[:account]
+    case params[:account_type]
+      when "king"
+        @account = King.new params[:account]
+      when "storyteller"
+        @account = Storyteller.new params[:account]
+      when "hero"
+        @account = Hero.new params[:account]
     end
 
-    if @account.save
-      s = Story.last.hero = @account
-      s.save
-      login params[:account][:email], params[:account][:password]
+    if @account.valid?
+      @account.save
 
-      correct_path = case @account.class
-        when King then "campaign_feature_path"
-        when Storyteller then "team_organization_path"
-        when Hero then dashboard_features_path
-        else root_url
+      login @account.email, params[:account][:password]
+
+      case @account.class
+        when King
+          path = "campaign_feature_path"
+        when Storyteller
+          path = "team_organization_path"
+        when Hero
+          path = dashboard_features_path
+        else
+          path = root_url
       end
 
-      redirect_to correct_path, notice: "you've been signed up!"
+      redirect_to path, notice: "you've been signed up!"
     else
+      @errors = @account.errors
       @account = Account.new params[:account]
-      render :new, notice: @account.errors.full_messages
+      render :new, notice: "There were some errors in the information you submitted!"
     end
   end
 

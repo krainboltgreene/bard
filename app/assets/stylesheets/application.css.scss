@@ -9,12 +9,7 @@
 //= require fancybox_thumbs
 //= require progress
 //= require_tree .
-
-$primary_color: #E50D23;
-$secondary_color: #F97522;
-$dark_primary_color: #B055B5;
-$light_primary_color: #F9F966;
-$minor_color: #FFF1E0;
+@import 'variables';
 
 .hidden {
   display: none;
@@ -41,17 +36,13 @@ body article.container {
     font-family: 'Spirax', cursive;
     background-color: $primary_color;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45),inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    &:hover { background: lighten($primary_color, 7%); }
   }
 
   a {
     color: darken($minor_color, 5%);
+    &.close { color: $dark }
   }
 
-  .nav.secondary-nav li:last-child a {
-    color: $minor_color;
-  }
-
-  .brand:hover {
-    background: lighten($primary_color, 7%);
-  }
+  .nav.secondary-nav li:last-child a { color: $minor_color; }
 }

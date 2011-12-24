@@ -1,6 +1,8 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
 .pages_controller {
   article {
     header h1#slogan {
@@ -8,15 +10,13 @@
       font-family: 'Lobster', cursive;
       text-align: center;
       padding: 45px;
-      strong.epic {
-        color: #E50D23;
-      }
+      strong.epic { color: $primary_color; }
     }
 
     section {
       &#short_pitch {
         header h1 { text-align: center; }
-        ul li { font-size: 18px; line-height: 2em; color: #404040 }
+        ul li { font-size: 18px; line-height: 2em; color: $dark }
         p { text-align: center; }
       }
 
