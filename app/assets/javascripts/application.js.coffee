@@ -22,7 +22,5 @@
 #= require_tree .
 
 $(".alert-message").alert()
-popovers = $("[data-title][data-content]")
-popovers.popover
-  "title": "data-title",
-  "position": popovers.data("position") or "right"
+$("form [data-title][data-content]").popover "title" : "data-title"
+$("[data-twispy]").twipsy "title" : "data-twispy"

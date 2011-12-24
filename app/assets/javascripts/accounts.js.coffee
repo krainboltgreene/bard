@@ -2,22 +2,22 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
-  $('#TypeSelect .type .btn input').change ->
-    $('#TypeSelect .type .btn').removeClass 'primary'
-    $('#TypeSelect .type').removeClass 'well'
+  $('#type_select .type .btn input').change ->
+    $('#type_select .type .btn').removeClass 'primary'
+    $('#type_select .type').removeClass 'well'
     if $(this).is ':checked'
       $(this).parent().addClass 'primary'
     else
       $(this).parent().removeClass 'primary'
-    $('fieldset #TypeForm .type').hide()
-    $('fieldset #TypeDetails .detail').hide()
+    $('fieldset #type_form .type').hide()
+    $('fieldset #type_details .detail').hide()
     switch $(this).attr 'value'
       when 'king'
-        $('fieldset #TypeForm #king_form').fadeIn 'veryfast'
-        $('fieldset #TypeDetails #king_details').slideDown 'veryfast'
+        $('fieldset #type_form #king').fadeIn 'veryfast'
+        $('fieldset #type_details #king').slideDown 'veryfast'
       when 'storyteller'
-        $('fieldset #TypeForm #storyteller_form').fadeIn 'veryfast'
-        $('fieldset #TypeDetails #storyteller_details').slideDown 'veryfast'
+        $('fieldset #type_form #storyteller').fadeIn 'veryfast'
+        $('fieldset #type_details #storyteller').slideDown 'veryfast'
       when 'hero'
-        $('fieldset #TypeForm #hero_form').fadeIn 'veryfast'
-        $('fieldset #TypeDetails #hero_details').slideDown 'veryfast'
+        $('fieldset #type_form #hero').fadeIn 'veryfast'
+        $('fieldset #type_details #hero').slideDown 'veryfast'

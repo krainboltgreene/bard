@@ -3,25 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .pages_controller {
   article {
-    header #slogan {
+    header h1#slogan {
       font-size: 72px;
       font-family: 'Lobster', cursive;
       text-align: center;
       padding: 45px;
+      strong.epic {
+        color: #E50D23;
+      }
     }
+
     section {
       &#short_pitch {
         header h1 { text-align: center; }
-        ul li { font-size: 18px; line-height: 2em; }
+        ul li { font-size: 18px; line-height: 2em; color: #404040 }
         p { text-align: center; }
       }
 
-      &#monster {
+      &#mascot {
+        margin-top: 15px;
         text-align: center;
       }
 
       &#long_pitch {
-        margin-top: 75px;
+        margin-top: 50px;
       }
     }
   }

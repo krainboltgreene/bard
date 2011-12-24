@@ -3,21 +3,12 @@ header.page-header
 = form_for @account do |form|
   = render partial: 'errors', locals: { form: form }
   fieldset.row
-    .clearfix
-      legend
-        - popover = { title: "Account Type", content: "This is the type of account you'll have on Bard. Click on each button to find out more." }
-        span data-title=popover[:title] data-content=popover[:content] First, select your account type
-    .clearfix
-      = render partial: 'type_select', locals: { form: form }
-    hr
+    .well = render partial: 'type_select', locals: { form: form }
     .span8
-      #TypeForm
-        #king_form.type.hidden
-          = render partial: 'king_form', locals: { form: form }
-        #storyteller_form.type.hidden
-          = render partial: 'storyteller_form', locals: { form: form }
-        #hero_form.type.hidden
-          = render partial: 'hero_form', locals: { form: form }
+      #type_form
+        #king.type.hidden = render partial: 'king_form', locals: { form: form }
+        #storyteller.type.hidden = render partial: 'storyteller_form', locals: { form: form }
+        #hero.type.hidden = render partial: 'hero_form', locals: { form: form }
       = render partial: 'form', locals: { form: form }
       .clearfix
         = form.label :terms
@@ -28,12 +19,12 @@ header.page-header
                 = form.check_box :terms
                 - terms = "\"I accept the Terms Of Use as listed #{link_to "here", terms_path}\""
                 = form.label :terms, raw(terms)
-    #TypeDetails.span8
-      #king_details.detail.hidden.well
+    #type_details.span8
+      #king.detail.hidden
         = render partial: 'king_details', locals: { form: form }
-      #storyteller_details.detail.hidden.well
+      #storyteller.detail.hidden
         = render partial: 'storyteller_details', locals: { form: form }
-      #hero_details.detail.hidden.well
+      #hero.detail.hidden
         = render partial: 'hero_details', locals: { form: form }
     .row
       .actions.span14

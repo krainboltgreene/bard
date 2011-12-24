@@ -1,21 +1,23 @@
 header
-  h1#slogan Turn The Mundane Into Epic
+  h1#slogan
+    Turn The Mundane Into <strong class="epic">Epic</strong>
 
 .row
   section#short_pitch.span8
-    header
-      h1 Gamified Project Control
-    ul
-      li Motivate your work force with incentives
-      li Make your process fun and interactive
-      li Put all of your progress in view of the client
-    p = link_to "Make Your Progress Count", signup_path, class: "btn large primary"
+    .well
+      header
+        h1 Gamified Project Control
+      ul
+        li Motivate your work force with incentives
+        li Make your process fun and interactive
+        li Put all of your progress in view of the client
+      p = link_to "Make Your Progress Count", signup_path, class: "btn large primary", data: twispy_for(:pitch_button)
 
-  section#monster.span8
-    = image_tag 'mandi.jpg', data: ApplicationHelper::POPOVERS[:mandy]
+  section#mascot.span8
+    = image_tag 'mandi.jpg', data: popover_for(:mandy), id: 'mandy'
 
 section#long_pitch.row
-  section.span-one-third
+  section#king.span-one-third
     header
       h1 Client Is King
     p
@@ -25,17 +27,7 @@ section#long_pitch.row
       | jerky chuck bacon. Short loin pancetta shankle, corned beef
       | flank kielbasa beef ball tip venison cow. Ribeye t-bone pastrami,
 
-  section.span-one-third
-    header
-      h1 Tell A Story
-    p
-      | Pork tri-tip shank short loin pork chop, pig biltong venison filet mignon
-      | spare ribs tail pork belly boudin meatloaf drumstick. Tongue hamburger
-      | pork, drumstick ribeye bresaola pancetta rump corned beef chicken
-      | frankfurter t-bone ball tip. Pork belly capicola t-bone tenderloin,
-      | shoulder fatback chuck tri-tip leberkäse frankfurter
-
-  section.span-one-third
+  section#hero.span-one-third
     header
       h1 Be The Hero
     p
@@ -45,3 +37,12 @@ section#long_pitch.row
       | meatloaf brisket strip steak. T-bone hamburger turducken bresaola,
       | drumstick kielbasa ribeye tenderloin capicola frankfurter bacon.
 
+  section#storyteller.span-one-third
+    header
+      h1 Tell A Story
+    p
+      | Pork tri-tip shank short loin pork chop, pig biltong venison filet mignon
+      | spare ribs tail pork belly boudin meatloaf drumstick. Tongue hamburger
+      | pork, drumstick ribeye bresaola pancetta rump corned beef chicken
+      | frankfurter t-bone ball tip. Pork belly capicola t-bone tenderloin,
+      | shoulder fatback chuck tri-tip leberkäse frankfurter
