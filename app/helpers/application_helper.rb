@@ -56,13 +56,13 @@ module ApplicationHelper
     popovers[token]
   end
 
-  def twispys
+  def twipsys
     {
       pitch_button: "Trust us, you'll wonder why you didn't do this sooner!"
     }
   end
 
-  def twispy_for(token)
-    { twispy: twispys[token] }
+  def twipsy_for(token)
+    { twipsy: twipsys[token] }
   end
 end

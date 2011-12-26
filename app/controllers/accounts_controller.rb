@@ -3,6 +3,7 @@ class AccountsController < ApplicationController
 
   def new
     @account = Account.new
+    @errors = []
   end
 
   def create

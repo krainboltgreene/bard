@@ -4,4 +4,4 @@
 
 $('#mandy').popover "title" : "data-title", "placement" : "above"
 
-$("#short_pitch btn").twipsy "title" : "data-twispy"
+$("#short_pitch btn").twipsy "title" : "data-twipsy"

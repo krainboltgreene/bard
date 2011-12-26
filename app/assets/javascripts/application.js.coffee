@@ -6,23 +6,24 @@
 
 #= require jquery
 #= require jquery_ujs
-#= require jquery-ui
+#= require prefix
 #= require slides
 #= require guiders
 #= require isotope
 #= require progress
-#= require alerts
-#= require twipsy
-#= require popover
-#= require modal
-#= require buttons
-#= require scrollspy
-#= require tabs
+#= require bootstrap/alerts
+#= require bootstrap/buttons
+#= require bootstrap/dropdown
+#= require bootstrap/alerts
+#= require bootstrap/modal
+#= require bootstrap/twipsy
+#= require bootstrap/popover
+#= require jquery/prefix
 #= require_tree .
 
 $(".alert-message").alert()
 $("form [data-title][data-content]").popover "title" : "data-title"
-$("[data-twispy]").twipsy "title" : "data-twispy"
+$("[data-twipsy]").twipsy "title" : "data-twipsy"
 $(".error_messages.modal").modal 'show'
 $(".error_messages.modal .modal-footer .btn").click ->
   $(".error_messages.modal").modal 'toggle'
