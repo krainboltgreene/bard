@@ -1,7 +1,3 @@
 .topbar.topbar-inner
   .container
     = render partial: 'topbar'
-
-- if flash[:notice].present? or flash[:errors].present?
-  section#notifications.container
-    = render partial: 'notifications', locals: { notices: flash[:notice], error: flash[:errors]}

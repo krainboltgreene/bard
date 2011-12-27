@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
     account = login params[:email], params[:password], params[:remember_me]
     if account.present?
       correct_path = case account.class
-        when King then "campaign_feature_path"
-        when Storyteller then "team_organization_path"
+        when King then campaign_features_path
+        when Storyteller then team_organizations_path
         when Hero then dashboard_features_path
         else root_url
       end

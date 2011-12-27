@@ -1,7 +1,8 @@
 Bard::Application.routes.draw do
 
   resources :features do
-    get 'dashboard', action: :dashboard, on: :collection
+    get "dashboard", action: :dashboard, on: :collection
+    get "campaign", action: :campaign, on: :collection
   end
 
   resources :sessions

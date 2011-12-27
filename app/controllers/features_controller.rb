@@ -4,6 +4,9 @@ class FeaturesController < ApplicationController
   def dashboard
   end
 
+  def campaign
+  end
+
   # GET /features
   # GET /features.json
   def index

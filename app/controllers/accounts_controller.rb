@@ -21,9 +21,9 @@ class AccountsController < ApplicationController
 
       login @account.email, params[:account][:password]
 
-      case @account.class
+      case @account
         when King
-          path = "campaign_feature_path"
+          path = campaign_features_path
         when Storyteller
           path = "team_organization_path"
         when Hero

@@ -1,33 +1,13 @@
-h1 Campaign Overview
-
-img id='CampaignMap' src='' alt='campaign map'
-
-#StatusUpdates.clearfix
-  section.people
-    h2 People
-    ul
-      li
-        h3
-          img src='' alt=''
-          Adam
-        p Did some stuff'!
-    ul
-      li
-        h3
-          img src='' alt=''
-          Bob
-        p Did some other stuff
-  section.stories
-    h2 Stories
-    ul
-      li
-        h3
-          img src='' alt=''
-          Adam
-        p Did some stuff'!
-    ul
-      li
-        h3
-          img src='' alt=''
-          Bob
-        p Did some other stuff
+header.page-header
+  h1 Campaign Overview
+- if current_user.epics.present?
+  .row
+    section#map.span18
+      = image_path "campaign.png"
+    section#activity.span8
+        = render partial: "activity", locals: { epics: current_user.epics }
+    section#resources.span8
+        = render partial: "resources", locals: { epics: current_user.epics }
+- unless current_user.epics.present?
+  section#campaign_tutorial
+    = render partial: "tutorial", locals: { type: "campaign" }

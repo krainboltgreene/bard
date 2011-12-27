@@ -41,9 +41,7 @@ Feature.delete_all
 end
 
 
-me = Fabricate :hero,
+me = Fabricate :king,
   name: "Kurtis Rainbolt-Greene",
   email: "me@kurtisrainboltgreene.name",
   password: "12341234"
-
-Story.last.hero = me

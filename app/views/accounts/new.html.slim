@@ -6,10 +6,13 @@ header.page-header
   fieldset.row
     .well = render partial: 'type_select', locals: { form: form }
     .span8
-      #type_form
-        #king.type.hidden = render partial: 'king_form', locals: { form: form }
-        #storyteller.type.hidden = render partial: 'storyteller_form', locals: { form: form }
-        #hero.type.hidden = render partial: 'hero_form', locals: { form: form }
+      section#type_form
+        #king.type.hidden
+          = render partial: 'king_form', locals: { form: form }
+        #storyteller.type.hidden
+          = render partial: 'storyteller_form', locals: { form: form }
+        #hero.type.hidden
+          = render partial: 'hero_form', locals: { form: form }
       = render partial: 'form', locals: { form: form }
       .clearfix
         = form.label :terms
@@ -17,13 +20,16 @@ header.page-header
           ul.inputs-list
             li
               label
-                = form.check_box :terms
                 - terms = "I accept the #{link_to "Terms Of Use", terms_path}"
+                = form.check_box :terms
                 = form.label :terms, raw(terms)
-    #type_details.span8
-      #king.detail.hidden = render partial: 'king_details', locals: { form: form }
-      #storyteller.detail.hidden = render partial: 'storyteller_details', locals: { form: form }
-      #hero.detail.hidden = render partial: 'hero_details', locals: { form: form }
+    section#type_details.span8
+      #king.detail.hidden
+        = render partial: 'king_details', locals: { form: form }
+      #storyteller.detail.hidden
+        = render partial: 'storyteller_details', locals: { form: form }
+      #hero.detail.hidden
+        = render partial: 'hero_details', locals: { form: form }
     .row
       .actions.span14 = form.submit class: "btn large primary"
 

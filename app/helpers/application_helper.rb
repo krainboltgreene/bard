@@ -42,24 +42,8 @@ module ApplicationHelper
     @footer
   end
 
-  def popovers
-    {
-      mandy: {
-        title: "Little Mandy",
-        content:  "This is Little Mandy, he's the little monster that couldn't.
-                    If only he had some process to see what he was doing wrong!" }
-    }
-  end
-
   def popover_for(token)
-
     popovers[token]
-  end
-
-  def twipsys
-    {
-      pitch_button: "Trust us, you'll wonder why you didn't do this sooner!"
-    }
   end
 
   def twipsy_for(token)

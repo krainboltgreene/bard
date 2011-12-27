@@ -1,39 +1,28 @@
 header.page-header
   h1 Sign In
-
 = form_tag sessions_path do
   fieldset.row
     .span8
       .clearfix
-        legend Sign in to your account
-      .clearfix
-        - popover = { title: "Email Field", content: "Enter the email address you used to sign up." }
         = label_tag :email
-        .input
-          = email_field_tag :email, params[:email], data: popover
+        .input = email_field_tag :email, params[:email], data: popover_for(:email)
       .clearfix
-        - popover = { title: "Password Field", content: "Enter the password you used to sign up. It's between 8 and 256 characters long, letters and numbers." }
         = label_tag :password
-        .input
-          = password_field_tag :password, nil, data: popover
+        .input = password_field_tag :password, nil, data: popover_for(:password)
       .clearfix
-        - popover = { title: "Remember Me!", content: "Check this and you wont log out for another 7 days." }
         .input
           .input-append
             = label_tag :remember_me, "Remember me!", class: "btn"
-            label.add-on
-              = check_box_tag :remember_me, 1, params[:remember_me], data: popover
+            label.add-on = check_box_tag :remember_me, 1, params[:remember_me], data: popover_for(:remember_me)
 
-    .span8
-      .well
-        header
-          h1 Welcome back!
-        p Here's the latest news:
-        ol
-          li We've launched 0.6.0!
-          li We've launched 0.5.0!
-          li We've launched 0.4.0!
-          li The hunt is on...for prize money!
+    section#news.span8
+      header
+        h2 Welcome back!
+      p Here's the latest news:
+      ol
+        li We've launched 0.6.0!
+        li We've launched 0.5.0!
+        li We've launched 0.4.0!
+        li The hunt is on...for prize money!
     .row
-      .actions.span14
-        = submit_tag "Sign in", class: "btn large primary"
+      .actions.span14 = submit_tag "Sign in", class: "btn large primary"

@@ -30,6 +30,4 @@ module AccountsHelper
         content: "Simply retype your password here, exactly as you did above." }
     }
   end
-
-
 end

@@ -11,6 +11,7 @@ gem 'slim-rails', '0.2.1'
 gem 'sass-rails', '3.1.5'
 gem 'coffee-rails', '3.1.1'
 gem 'jquery-rails', '1.0.19'
+gem 'coffee-views', '0.1.4'
 
 group :production do
   gem 'newrelic_rpm', '3.3.0'
