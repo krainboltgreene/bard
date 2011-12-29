@@ -1,0 +1,13 @@
+header.page-header
+  h1 Create An Epic
+= form_for @feature do |form|
+  .clearfix
+    = form.label :details
+    .input = form.text_field :details, value: "Limited to 140 characters...", class: "xxlarge"
+  .clearfix
+    = form.label :description
+    .input
+      = form.text_area :description, class: "xxlarge", rows: 3
+      span.help-block
+        | Write up more detailed information about the functionality you'd
+        | like in your final product.
