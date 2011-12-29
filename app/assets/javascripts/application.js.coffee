@@ -28,3 +28,6 @@ $(dom_errors + ".modal").modal 'show'
 
 $(dom_errors + " .modal-footer .btn").click ->
   $(dom_errors + ".modal").modal 'toggle'
+
+unless $(window).height() < $('body > article').height()
+  $('body > article').css 'min-height', $(window).height() - 150
