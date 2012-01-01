@@ -1,5 +1,4 @@
-class Features::CampaignsController < ApplicationController
-  include FeaturesController
+class Features::CampaignsController < FeatureController
 
   # def index
 

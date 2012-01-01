@@ -1,5 +1,4 @@
-class Features::LyricsController < ApplicationController
-  include FeaturesController
+class Features::LyricsController < FeatureController
 
   # def index
 

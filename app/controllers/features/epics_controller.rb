@@ -1,5 +1,4 @@
-class Features::EpicsController < ApplicationController
-  include FeaturesController
+class Features::EpicsController < FeatureController
 
   # def index
 
