@@ -1,13 +1,18 @@
 header.page-header
   h1 Create An Epic
 = form_for @feature do |form|
+  = form.hidden_field :feature_type, value: "epic"
   .clearfix
     = form.label :details
-    .input = form.text_field :details, value: "Limited to 140 characters...", class: "xxlarge"
+    .input
+      - default_value = "Limited to 140 characters..."
+      = form.text_field :details, value: default_value, class: "xxlarge"
+      em.help-block Need help? Click #{ link_to "here", "#" }
   .clearfix
     = form.label :description
     .input
-      = form.text_area :description, class: "xxlarge", rows: 3
-      span.help-block
-        | Write up more detailed information about the functionality you'd
-        | like in your final product.
+      - default_value = "This is for detailed information on the functionality you would like to see in your application."
+      = form.text_area :description, class: "xxlarge", rows: 3, value: default_value
+      em.help-block See examples  #{ link_to "here", "#" }
+  .actions
+    = form.submit class: "btn primary"

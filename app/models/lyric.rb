@@ -1,5 +1,4 @@
 class Lyric < Feature
-  belongs_to :lyricism, polymorphic: true
 
   field :completed_at, type: Time
 
@@ -8,6 +7,6 @@ class Lyric < Feature
   end
 
   def completed?
-    self.completed_at.present?
+    completed_at.present?
   end
 end

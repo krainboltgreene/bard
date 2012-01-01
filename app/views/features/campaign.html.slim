@@ -1,14 +1,14 @@
 header.page-header
   h1 Campaign Overview
 .row
-- if current_user.epics.present?
+- if current_user.campaigns.map(&:epics).flatten.any?
   section#map.span18
     = image_path "campaign.png"
   section#activity.span8
     = render partial: "activity", locals: { epics: current_user.epics }
   section#resources.span8
     = render partial: "resources", locals: { epics: current_user.epics }
-- else
+- els
   p.span18
     h1
       small You have no Epics, why not #{ link_to "create one", new_feature_path }.

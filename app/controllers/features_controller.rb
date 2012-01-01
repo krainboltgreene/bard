@@ -1,17 +1,21 @@
 class FeaturesController < ApplicationController
   before_filter :require_login
+  before_filter :new_feature, only: [:new]
+  before_filter :filter_type, only: [:create]
+  before_filter :find_feature, only: [:show, :edit, :update, :destroy]
+  before_filter :all_features, only: [:index]
 
   def dashboard
+    redirect_to campaign_features_path if current_user.is_a? King
   end
 
   def campaign
+    redirect_to dashboard_features_path if current_user.is_a? Hero or current_user.is_a? Storyteller
   end
 
   # GET /features
   # GET /features.json
   def index
-    @features = Feature.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @features }
@@ -21,8 +25,6 @@ class FeaturesController < ApplicationController
   # GET /features/1
   # GET /features/1.json
   def show
-    @feature = Feature.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @feature }
@@ -32,8 +34,6 @@ class FeaturesController < ApplicationController
   # GET /features/new
   # GET /features/new.json
   def new
-    @feature = Feature.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @feature }
@@ -42,15 +42,29 @@ class FeaturesController < ApplicationController
 
   # GET /features/1/edit
   def edit
-    @feature = Feature.find(params[:id])
   end
 
   # POST /features
   # POST /features.json
   def create
-    @feature = Feature.new(params[:feature])
-
     respond_to do |format|
+      if @account.valid?
+        @account.save and login @account.email, params[:account][:password]
+
+        path = case @account
+          when King then campaign_features_path
+          when Storyteller then team_organization_path
+          when Hero then dashboard_features_path
+          else root_url
+        end
+
+        redirect_to path, notice: "you've been signed up!"
+      else
+        @errors = @account.errors
+        new_account
+        render :new, notice: "There were some errors in the information you submitted!"
+      end
+
       if @feature.save
         format.html { redirect_to @feature, notice: 'Feature was successfully created.' }
         format.json { render json: @feature, status: :created, location: @feature }
@@ -64,8 +78,6 @@ class FeaturesController < ApplicationController
   # PUT /features/1
   # PUT /features/1.json
   def update
-    @feature = Feature.find(params[:id])
-
     respond_to do |format|
       if @feature.update_attributes(params[:feature])
         format.html { redirect_to @feature, notice: 'Feature was successfully updated.' }
@@ -80,7 +92,6 @@ class FeaturesController < ApplicationController
   # DELETE /features/1
   # DELETE /features/1.json
   def destroy
-    @feature = Feature.find(params[:id])
     @feature.destroy
 
     respond_to do |format|
@@ -88,4 +99,26 @@ class FeaturesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  private
+    def new_feature
+      @feature = Feature.new params[:feature]
+    end
+
+    def find_feature
+      @feature = Feature.find_by_id params[:id]
+    end
+
+    def all_features
+      @features = Feature.all
+    end
+
+    def filter_type
+      @feature = case params[:feature][:feature_type]
+        when "epic" then Epic.new params[:feature]
+        when "story" then Story.new params[:feature]
+        when "lyric" then Lyric.new params[:feature]
+        else Feature.new params[:feature]
+      end
+    end
 end

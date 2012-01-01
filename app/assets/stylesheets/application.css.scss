@@ -39,6 +39,7 @@ body {
   background: $secondary_color;
   background-image: -webkit-linear-gradient(45deg, rgba(240, 240, 240, .1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%, transparent 75%, transparent);
   background-size: 20px 20px;
+  padding-left: 175px;
 
   .brand {
     position: absolute;

@@ -1,8 +1,7 @@
-h1 Listing features
-
-ul
-  - @features.each do |feature|
-    li= feature.details
-br
-
-= link_to 'New Feature', new_feature_path
+- case current_user
+- when King
+  = render partial: "campaign_index"
+- when Storyteller
+  = render partial: "story_index"
+- when Hero
+  = render partial: "lyrics_index"

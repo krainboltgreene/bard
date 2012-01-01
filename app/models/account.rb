@@ -5,23 +5,23 @@ class Account
 
   authenticates_with_sorcery!
 
-  attr_accessible :email
-  attr_accessible :encryped_password
-  attr_accessible :password
-  attr_accessible :password_confirmation
-  attr_accessible :name
-  attr_accessible :terms
-  attr_accessible :role
-  attr_accessible :company_name
-  attr_accessor :role
-  attr_accessor :company_name
-  attr_accessor :account_type
+  # attr_accessible :email
+  # attr_accessible :encryped_password
+  # attr_accessible :password
+  # attr_accessible :password_confirmation
+  # attr_accessible :name
+  # attr_accessible :terms
+  # attr_accessible :role
+  # attr_accessible :company_name
 
   field :email
   field :encryped_password
   field :name
   field :terms, type: Boolean, default: false
   field :xp, type: Integer, default: 0
+  attr_accessor :account_type
+  attr_accessor :role
+  attr_accessor :company_name
 
   index :email, unique: true
 
@@ -37,7 +37,9 @@ class Account
   before_create :convert_terms
 
   def level
-    ( 0.01 * ( 50 + 4 * Math.sqrt( 500 + xp ) ) ).round
+    base = Math.sqrt 500 + xp
+    formula = 0.01 * ( 50 + 4 * base )
+    formula.round
   end
 
   def remaining_experience

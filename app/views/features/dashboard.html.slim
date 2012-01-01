@@ -1,15 +1,15 @@
 - if current_user.story.present?
   section
-    - epic = current_user.story.epic
-    = render partial: 'epic', locals: { epic: epic }
-    = render partial: 'team', locals: { storytellers: epic.stories.map(&:storyteller), heroes: epic.stories.map(&:hero) }
+    - if epic.stories.any?
+      - epic = current_user.story.epic
+      = render partial: 'epic', locals: { epic: epic }
+      = render partial: 'team', locals: { storytellers: epic.stories.map(&:storyteller), heroes: epic.stories.map(&:hero) }
 
-section
+section#activity
   - if current_user.story.present?
     = render partial: 'current_story', locals: { story: current_user.story }
-  .row
-    .span8
-      = render partial: 'active_stories', locals: { stories: current_user.story.epic.stories }
-    .span8
-      = render partial: 'backlog_stories', locals: { stories: current_user.story.epic.stories.reject(&:active) }
-
+    .row
+      - stories = current_user.story.epic.stories
+      .span8 = render partial: 'active_stories', locals: { stories: stories }
+      - stories = current_user.story.epic.stories.reject(&:active)
+      .span8 = render partial: 'backlog_stories', locals: { stories: stories }

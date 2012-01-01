@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_filter -> { redirect_to dashboard_features_path if current_user.present? }, only: [:splash, :beta]
   def about
   end
 
