@@ -1,4 +1,4 @@
-class Features::EpicsController < FeatureController
+class Features::EpicsController < FeaturesController
 
   # def index
 

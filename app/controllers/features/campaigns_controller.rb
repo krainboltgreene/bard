@@ -1,4 +1,4 @@
-class Features::CampaignsController < FeatureController
+class Features::CampaignsController < FeaturesController
 
   # def index
 

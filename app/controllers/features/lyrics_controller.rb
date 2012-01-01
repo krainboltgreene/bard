@@ -1,4 +1,4 @@
-class Features::LyricsController < FeatureController
+class Features::LyricsController < FeaturesController
 
   # def index
 

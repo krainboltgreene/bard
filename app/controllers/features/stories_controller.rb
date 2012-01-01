@@ -1,4 +1,4 @@
-class Features::StoriesController < FeatureController
+class Features::StoriesController < FeaturesController
 
   # def index
 
