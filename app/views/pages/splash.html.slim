@@ -4,14 +4,13 @@ header
 
 .row
   section#short_pitch.span8
-    .well
-      header
-        h1 Gamified Project Control
-      ul
-        li Motivate your work force with incentives
-        li Make your process fun and interactive
-        li Put all of your progress in view of the client
-      p = link_to "Make Your Progress Count", signup_path, class: "btn large primary", data: twipsy_for(:pitch_button)
+    header
+      h1 Gamified Project Control
+    ul
+      li Motivate your work force with incentives
+      li Make your process fun and interactive
+      li Put all of your progress in view of the client
+    p = link_to "Make Your Progress Count", signup_path, class: "btn large primary", data: twipsy_for(:pitch_button)
 
   section#mascot.span8
     = image_tag 'mandi.jpg', data: popover_for(:mandy), id: 'mandy'
@@ -27,16 +26,6 @@ section#long_pitch.row
       | jerky chuck bacon. Short loin pancetta shankle, corned beef
       | flank kielbasa beef ball tip venison cow. Ribeye t-bone pastrami,
 
-  section#hero.span-one-third
-    header
-      h1 Be The Hero
-    p
-      | Hamburger pork loin bresaola, beef ribs venison shankle flank
-      | meatball kielbasa shank prosciutto. Rump hamburger andouille
-      | frankfurter bacon, t-bone tenderloin boudin meatball fatback
-      | meatloaf brisket strip steak. T-bone hamburger turducken bresaola,
-      | drumstick kielbasa ribeye tenderloin capicola frankfurter bacon.
-
   section#storyteller.span-one-third
     header
       h1 Tell A Story
@@ -46,3 +35,13 @@ section#long_pitch.row
       | pork, drumstick ribeye bresaola pancetta rump corned beef chicken
       | frankfurter t-bone ball tip. Pork belly capicola t-bone tenderloin,
       | shoulder fatback chuck tri-tip leberkäse frankfurter
+
+  section#hero.span-one-third
+    header
+      h1 Be The Hero
+    p
+      | Hamburger pork loin bresaola, beef ribs venison shankle flank
+      | meatball kielbasa shank prosciutto. Rump hamburger andouille
+      | frankfurter bacon, t-bone tenderloin boudin meatball fatback
+      | meatloaf brisket strip steak. T-bone hamburger turducken bresaola,
+      | drumstick kielbasa ribeye tenderloin capicola frankfurter bacon.

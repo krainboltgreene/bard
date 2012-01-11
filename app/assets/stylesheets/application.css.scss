@@ -21,25 +21,22 @@ body {
   }
 
   &> footer {
-    background: gray;
-    background-image: -webkit-linear-gradient(45deg, rgba(240, 240, 240, .1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%, transparent 75%, transparent);
-    background-size: 20px 20px;
+    background: $minor_color;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     min-height: 175px;
     ul.links {
-      background: $light;
-      border-radius: 2px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       li.link { display: inline; text-align: center; }
     }
   }
 }
 
 .topbar-inner {
-  background: $secondary_color;
-  background-image: -webkit-linear-gradient(45deg, rgba(240, 240, 240, .1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%, transparent 75%, transparent);
-  background-size: 20px 20px;
+  background-image: none;
   padding-left: 175px;
+
+  &.over {
+    box-shadow: none;
+  }
 
   .brand {
     position: absolute;
@@ -52,6 +49,14 @@ body {
     &:hover { background: lighten($primary_color, 7%); }
   }
 
-  a { color: darken($minor_color, 5%); &.close { color: $dark } }
-  .nav.secondary-nav li:last-child a { color: $minor_color; }
+  a { color: darken($minor_color, 10%); &.close { color: $dark } }
+  .nav.secondary-nav li:last-child a { color: $minor_color; &:hover { color: darken($minor_color, 10%) } }
+
+  &.under {
+    background: $secondary_color;
+    background-image: -webkit-linear-gradient(45deg, rgba(240, 240, 240, .1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .1) 75%, transparent 75%, transparent);
+    background-size: 20px 20px;
+    height: 48px;
+  }
 }
+
